@@ -414,17 +414,25 @@ This is the nginx.conf for this project:
 ```bash
 server {
     listen 127.0.0.1:80;
+    server_name www.llaor.com;
+    return 301 http://llaor.com$request_uri;
+}
+
+server {
+    listen 127.0.0.1:80;
 
     root /var/www/llaor.com/html;
     index index.html index.htm index.nginx-debian.html;
 
-    server_name llaor.com www.llaor.com;
+    server_name llaor.com;
 
     location / {
-            try_files $uri /index.html =404;
+        try_files $uri /index.html =404;
     }
 }
 ```
+
+_`www` redirects to non-www to avoid CORS troubles on api calls._
 
 Setup nginx.conf:
 ```bash
