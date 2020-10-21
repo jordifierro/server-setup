@@ -338,7 +338,7 @@ As I said before, this script get 2 instances of each up
 
 First of all, generate the ssl certificate:
 ```bash
-sudo certbot certonly --manual --preferred-challenges=dns --email=jordifierromulero@gmail.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d "*.pachatary.com" -d pachatary.com
+sudo certbot certonly --manual --preferred-challenges=dns --email=myemail@gmail.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d "*.pachatary.com" -d pachatary.com
 ```
 
 Then, we'll copy the nginx confs to nginx folder.
